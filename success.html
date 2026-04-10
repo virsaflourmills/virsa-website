@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Order Successful | Virsa</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #f7f1e8, #e8d8bd);
+      padding: 20px;
+      color: #2b1d0e;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 520px;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 24px;
+      padding: 40px 30px;
+      text-align: center;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+      border: 1px solid rgba(120, 84, 38, 0.12);
+    }
+
+    .logo {
+      width: 110px;
+      max-width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #dff3e4;
+      color: #1f7a3f;
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: 34px;
+      margin-bottom: 14px;
+      color: #3b2612;
+    }
+
+    p {
+      font-size: 17px;
+      line-height: 1.6;
+      color: #5f4a35;
+      margin-bottom: 14px;
+    }
+
+    .subtext {
+      font-size: 14px;
+      color: #8a735c;
+      margin-top: 8px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 24px;
+      background: #3b2612;
+      color: #fff;
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: bold;
+      transition: 0.25s ease;
+    }
+
+    .btn:hover {
+      background: #5a3a1c;
+      transform: translateY(-1px);
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img src="/logo.png" alt="Virsa Logo" class="logo" />
+    <div class="badge">Payment Successful</div>
+    <h1>Thank You for Your Order!</h1>
+    <p>Your payment has been received successfully.</p>
+    <p>We’re grateful you chose <strong>Virsa</strong>. Your order is now being processed.</p>
+    <p class="subtext">You’ll hear from us soon with the next steps.</p>
+    <a href="/" class="btn">Back to Home</a>
+  </div>
+</body>
+</html>

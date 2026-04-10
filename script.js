@@ -1,4 +1,4 @@
-const PRICE = 19.99;
+const PRICE = 17.99;
 const PRODUCT_NAME = "Desi Style Durum Atta - 20 lb";
 const PRODUCT_ID = "desi-style-durum-atta-20lb";
 const BACKEND_CHECKOUT_URL = "/api/create-checkout-session";
