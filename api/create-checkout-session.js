@@ -5,7 +5,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 const products = {
   "desi-style-durum-atta-20lb": {
     name: "Desi Style Durum Atta - 20 lb",
-    price: 1799,
+    price: 1499,
     image: "https://yourdomain.com/package.png",
   },
 };

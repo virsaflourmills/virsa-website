@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #fff8ea;
+  color: #2a1608;
+}
+
+::selection {
+  background: #d89b38;
+  color: #fff;
+}
+html { scroll-behavior: smooth; }
+
+/* Mobile polish */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  section {
+    scroll-margin-top: 90px;
+  }
+
+  h1, h2, h3, p {
+    word-break: normal;
+  }
+
+  .mobile-safe {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
