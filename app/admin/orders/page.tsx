@@ -6,6 +6,7 @@ import { supabase } from "../../../lib/supabase/client";
 type Order = {
   id: string;
   stripe_session_id: string;
+  stripe_payment_intent: string;
   customer_name: string;
   customer_email: string;
   shipping_name: string;
@@ -178,3 +179,4 @@ export default function AdminOrdersPage() {
     </main>
   );
 }
+
