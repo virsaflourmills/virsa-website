@@ -1,5 +1,5 @@
-﻿import { NextResponse } from "next/server";
-import { stripe } from "../../../lib/stripe/client";
+import { NextResponse } from "next/server";
+import { getStripe } from "../../../lib/stripe/client";
 import { supabaseAdmin } from "../../../lib/supabase/admin";
 import { sendOrderEmail } from "../../../lib/email/mailer";
 
@@ -14,7 +14,7 @@ export async function POST(req: Request) {
   let event;
 
   try {
-    event = stripe.webhooks.constructEvent(
+    event = getStripe().webhooks.constructEvent(
       body,
       signature,
       process.env.STRIPE_WEBHOOK_SECRET!

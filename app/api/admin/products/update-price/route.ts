@@ -1,7 +1,7 @@
-﻿import { NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import { supabaseAdmin } from "../../../../../lib/supabase/admin";
-import { stripe } from "../../../../../lib/stripe/client";
+import { getStripe } from "../../../../../lib/stripe/client";
 
 const ADMIN_EMAIL = "virsaflourmills@gmail.com";
 
@@ -55,14 +55,14 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "Product not found." }, { status: 404 });
     }
 
-    const stripePrice = await stripe.prices.create({
+    const stripePrice = await getStripe().prices.create({
       product: product.stripe_product_id,
       unit_amount: newPriceCents,
       currency: "cad",
     });
 
     if (product.stripe_price_id) {
-      await stripe.prices.update(product.stripe_price_id, {
+      await getStripe().prices.update(product.stripe_price_id, {
         active: false,
       });
     }
