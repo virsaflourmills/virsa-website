@@ -30,7 +30,7 @@ export default async function SuccessPage({
 
   if (sessionId) {
     try {
-      const session = await getStripe().checkout.sessions.retrieve(sessionId, {
+      const session: any = await getStripe().checkout.sessions.retrieve(sessionId, {
         expand: ["line_items"],
       });
 
