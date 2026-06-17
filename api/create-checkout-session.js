@@ -16,18 +16,26 @@ export default async function handler(req, res) {
   }
 
   try {
-    const body = req.body || {};
+    let body = req.body || {};
 
-    let cartItems = body.cartItems;
+if (typeof body === "string") {
+  try {
+    body = JSON.parse(body);
+  } catch {
+    body = {};
+  }
+}
 
-    if (!cartItems && body.quantity) {
-      cartItems = [
-        {
-          id: "desi-style-durum-atta-20lb",
-          quantity: body.quantity,
-        },
-      ];
-    }
+let cartItems = body.cartItems;
+
+if (!cartItems) {
+  cartItems = [
+    {
+      id: "desi-style-durum-atta-20lb",
+      quantity: body.quantity || 1,
+    },
+  ];
+}
 
     if (!cartItems || !Array.isArray(cartItems) || cartItems.length === 0) {
       return res.status(400).json({ error: "Cart items are required" });
