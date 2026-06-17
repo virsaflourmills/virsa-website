@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState } from "react";
 
@@ -13,7 +13,7 @@ export default function AddToCartButton({
   async function checkout() {
     setLoading(true);
 
-    const res = await fetch("/api/checkout-by-product", {
+    const res = await fetch("/api/create-checkout-session", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
