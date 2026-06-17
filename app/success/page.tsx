@@ -1,5 +1,5 @@
-﻿import Image from "next/image";
-import { stripe } from "../../lib/stripe/client";
+import Image from "next/image";
+import { getStripe } from "../../lib/stripe/client";
 
 export default async function SuccessPage({
   searchParams,
@@ -13,7 +13,7 @@ export default async function SuccessPage({
 
   if (sessionId) {
     try {
-      const session = await stripe.checkout.sessions.retrieve(sessionId);
+      const session = await getStripe().checkout.sessions.retrieve(sessionId);
       paid = session.payment_status === "paid";
     } catch {
       paid = false;
